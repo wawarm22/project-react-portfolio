@@ -10,7 +10,6 @@ import AnimatedCursor from "react-animated-cursor"
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Skills from './components/Skills/Skills'
-import Services from './components/Services/Services'
 import Portfolio from './components/Portfolio/Portfolio'
 import Number from './components/Number/Number'
 import Testimonials from './components/Testimonials/Testimonials'
@@ -48,8 +47,7 @@ function App() {
       />
       <Navbar />
       <Hero />
-      <Skills />
-      <Services />
+      <Skills />      
       <Portfolio />
       <Number />
       <Testimonials />

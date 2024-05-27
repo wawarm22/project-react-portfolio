@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Skills.module.css'
-import { FaSquareJs, FaReact, FaSass, FaGitAlt, FaNode } from "react-icons/fa6";
+import { FaSquareJs, FaReact, FaPython, FaGitAlt, FaNode } from "react-icons/fa6";
 import Tilt from 'react-parallax-tilt';
 
 function Skills() {
@@ -20,7 +20,7 @@ function Skills() {
             </li>
             <li>
               <Tilt scale={1.2} transitionSpeed={2500} tiltReverse={true}>
-                <FaSass />
+                <FaPython />
               </Tilt>
             </li>
             <li>
