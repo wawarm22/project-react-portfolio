@@ -13,7 +13,7 @@ function Number() {
                     <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                         {({ isVisible }) => (
                         <div>
-                            {isVisible ? <CountUp start={0} end={100} duration={5} /> : null}+
+                            {isVisible ? <CountUp start={0} end={10} duration={5} /> : null}+
                         </div>
                         )}
                     </VisibilitySensor>
@@ -25,7 +25,7 @@ function Number() {
                     <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                         {({ isVisible }) => (
                         <div>
-                            {isVisible ? <CountUp start={0} end={50} duration={5} /> : null}+
+                            {isVisible ? <CountUp start={0} end={5} duration={5} /> : null}+
                         </div>
                         )}
                     </VisibilitySensor>
@@ -37,25 +37,13 @@ function Number() {
                     <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                         {({ isVisible }) => (
                         <div>
-                            {isVisible ? <CountUp start={0} end={10} duration={5} /> : null}+
+                            {isVisible ? <CountUp start={0} end={1} duration={5} /> : null}+
                         </div>
                         )}
                     </VisibilitySensor>
                 </h3>
                 <p>Years of experience</p>
-            </div>
-            <div className={styles.number_items}>
-                <h3>
-                    <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
-                        {({ isVisible }) => (
-                        <div>
-                            {isVisible ? <CountUp start={0} end={200} duration={5} /> : null}+
-                        </div>
-                        )}
-                    </VisibilitySensor>
-                </h3>
-                <p>Happy Clients</p>
-            </div>
+            </div>            
         </div>
     </>
   )

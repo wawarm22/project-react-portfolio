@@ -15,8 +15,8 @@ function Contact() {
                     123 Main Street <br />
                     Bangkok, Thailand
                 </p>
-                <p><FaPhone /> (+66) 98 555 1234</p>
-                <p><FaEnvelope /> support@site.com</p>
+                <p><FaPhone /> (+66) 95 686 0868</p>
+                <p><FaEnvelope /> watcharaphon.wa@gmail.com</p>
             </div>
             <div className={styles.contact_form}>
                 <form action="">

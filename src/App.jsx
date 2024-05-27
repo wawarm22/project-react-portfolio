@@ -1,26 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
 
-// External Libs
-import AnimatedCursor from "react-animated-cursor"
-
-// Components
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import Skills from './components/Skills/Skills'
-import Portfolio from './components/Portfolio/Portfolio'
-import Number from './components/Number/Number'
-import Testimonials from './components/Testimonials/Testimonials'
-import Contact from './components/Contact/Contact'
-import Footer from './components/Footer/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AnimatedCursor from 'react-animated-cursor';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import Skills from './components/Skills/Skills';
+import Portfolio from './components/Portfolio/Portfolio';
+import Number from './components/Number/Number';
+import Testimonials from './components/Testimonials/Testimonials';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Listport from './components/Listport/Listport';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
+    <Router>
       <AnimatedCursor
         innerSize={8}
         outerSize={8}
@@ -46,15 +45,20 @@ function App() {
         ]}
       />
       <Navbar />
-      <Hero />
-      <Skills />      
-      <Portfolio />
-      <Number />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<>
+          <Hero />
+          <Skills />
+          <Portfolio />
+          <Number />
+          <Testimonials />
+          <Contact />
+          <Footer />
+        </>} />
+        <Route path="/port" element={<Listport />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

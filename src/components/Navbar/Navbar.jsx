@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Navbar.module.css'
 import { FaBars } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 
@@ -15,11 +16,11 @@ function Navbar() {
         <div className={styles.container}>
           <div className={styles.nav_con}>
             <div className={styles.logo}>
-              <a href="#">JD PORT</a>
+              <Link to="/">JD PORT</Link>                          
             </div>
             <ul>
-              <li><a href="#services">Skills</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
+              <li><Link to="/port">Portfolio</Link></li>
+              <li><a href="#portfolio">Skill</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
             <div className={styles.button}>

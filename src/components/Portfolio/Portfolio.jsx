@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from './Portfolio.module.css'
 import Tilt from 'react-parallax-tilt';
+import IMAGES from "../../images/images";
+import { Link } from "react-router-dom";
+
 
 function Portfolio() {
   return (
@@ -9,39 +12,41 @@ function Portfolio() {
       <div className={styles.port_list}>
         <div className={styles.port_items}>
             <Tilt scale={1.1} transitionSpeed={2500} tiltReverse={true}>
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding" />
+              <Link to="/port">
+                <img src={IMAGES.image3} alt="coding" />
+              </Link>
             </Tilt>
-            <p>Project Title</p>
+            <p>เริ่มต้นสร้างและแสดงเนื้อหาของเว็บไซต์ด้วย HTML</p>
         </div>
         <div className={styles.port_items}>
             <Tilt scale={1.1} transitionSpeed={2500} tiltReverse={true}>
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding" />
+              <img src={IMAGES.image4} alt="coding" />
             </Tilt>
-            <p>Project Title</p>
+            <p>ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS</p>
         </div>
         <div className={styles.port_items}>
             <Tilt scale={1.1} transitionSpeed={2500} tiltReverse={true}>
-              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding" />
+              <img src={IMAGES.image5} alt="coding" />
             </Tilt>
-            <p>Project Title</p>
+            <p>เพิ่มลูกเล่นให้กับเว็บไซต์ด้วย JavaScript</p>
         </div>
         <div className={styles.port_items}>
             <Tilt scale={1.1} transitionSpeed={2500} tiltReverse={true}>
-              <img src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding" />
+              <img src={IMAGES.image6} alt="coding" />
             </Tilt>
-            <p>Project Title</p>
+            <p>เชื่อมต่อเว็บไซต์กับข้อมูลจากแหล่งอื่นๆ โดยใช้ API</p>
         </div>
         <div className={styles.port_items}>
             <Tilt scale={1.1} transitionSpeed={2500} tiltReverse={true}>
-              <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding" />
+              <img src={IMAGES.image7} alt="coding" />
             </Tilt>
-            <p>Project Title</p>
+            <p>พัฒนาเว็บ React Portfolio ตั้งแต่เริ่มต้นจนขึ้น Deploy</p>
         </div>
         <div className={styles.port_items}>
             <Tilt scale={1.1} transitionSpeed={2500} tiltReverse={true}>
-              <img src="https://images.unsplash.com/photo-1624996752380-8ec242e0f85d?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding" />
+              <img src={IMAGES.image10} alt="coding" />
             </Tilt>
-            <p>Project Title</p>
+            <p>React ตั้งแต่พื้นฐาน จนสร้าง Chat Application ได้</p>
         </div>
       </div>
     </div>
