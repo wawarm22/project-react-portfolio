@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Listport.module.css"; 
 import IMAGES from "../../images/images";
+import CER from "../../certificate/certificate";
 import Tilt from "react-parallax-tilt";
 
 function Listport() {
@@ -26,7 +27,7 @@ function Listport() {
         "Semantic Elements",
         "Table and Form",
       ],
-      file: "path/to/file1.pdf", // Replace with actual file paths
+      file: [CER.cer1], 
       link: "https://example.com/link1",
     },
     {
@@ -39,7 +40,7 @@ function Listport() {
         "Flex and Grid",
         "Responsive Design",
       ],
-      file: "path/to/file2.pdf",
+      file: [CER.cer2],
       link: "https://example.com/link2",
     },
     {
@@ -54,7 +55,7 @@ function Listport() {
         "Loop (While/For)",
         "DOM Manipulation",
       ],
-      file: "path/to/file3.pdf",
+      file: [CER.cer3],
       link: "https://example.com/link3",
     },
     {
@@ -66,7 +67,7 @@ function Listport() {
         "JavaScript",
         "Full Workshop and Conclusion",
       ],
-      file: "path/to/file4.pdf",
+      file: [CER.cer4],
       link: "https://example.com/link4",
     },
     {
@@ -79,7 +80,7 @@ function Listport() {
         "Upload to Github & Deploy",
       ],
       file: "path/to/file5.pdf",
-      link: "https://example.com/link5",
+      link: "https://github.com/wawarm22/project-react-portfolio.git",
     },
     {
       topic: "React ตั้งแต่พื้นฐาน จนสร้าง Chat Application ได้",
@@ -92,7 +93,7 @@ function Listport() {
         "Component Logic Reusing",
         "Workshop ลองทำ Chat application",
       ],
-      file: "path/to/file6.pdf",
+      file: [CER.cer5],
       link: "https://example.com/link6",
     },
   ];
@@ -139,7 +140,7 @@ function Listport() {
                 rel="noopener noreferrer"
                 className={styles.fileLink}
               >
-                View File
+                View File Certificate
               </a>
               <a
                 href={info.link}
@@ -147,7 +148,7 @@ function Listport() {
                 rel="noopener noreferrer"
                 className={styles.link}
               >
-                Visit Link
+                Link Github
               </a>
             </div>
           )}
