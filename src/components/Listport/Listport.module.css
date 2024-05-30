@@ -4,6 +4,7 @@
 
 .section {
   display: flex;
+  flex-direction: column; /* Change to column for better stacking on smaller screens */
   align-items: flex-start;
   margin-bottom: 20px;
 }
@@ -13,6 +14,7 @@
   font-size: 16px;
   cursor: pointer;
   margin-right: 20px;
+  margin-bottom: 10px; /* Add margin bottom for spacing */
 }
 
 .infoWindow {
@@ -20,8 +22,9 @@
   background-color: #0085ff;
   border-radius: 10px;
   padding: 20px;
-  max-width: 2200px;
+  max-width: 100%; /* Change to 100% for responsiveness */
   color: #fff;
+  box-sizing: border-box;
 }
 
 .images {
@@ -35,8 +38,9 @@
 }
 
 .image {
-  width: 400px;
-  height: 300px;
+  width: 100%; /* Adjust to 100% for responsiveness */
+  max-width: 400px; /* Add max-width */
+  height: auto; /* Change to auto for maintaining aspect ratio */
   border-radius: 20px;
   margin: 20px 10px;
   border: 2px solid #fff;
@@ -65,8 +69,58 @@ button {
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
+}
 
-  &:hover {
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.3);
+button:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .infoWindow {
+    max-width: 90%;
+  }
+
+  .image {
+    max-width: 300px;
+    margin: 10px;
+  }
+
+  .infoWindow ul {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toggleButton {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .image {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .infoWindow ul {
+    font-size: 18px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggleButton {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .infoWindow ul {
+    font-size: 16px;
   }
 }
