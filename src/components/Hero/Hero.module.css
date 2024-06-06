@@ -40,8 +40,7 @@
         & .hero_img {
             width: 300px;
             height: 300px;
-            border-radius: 100%;
-            background-image: url('https://drive.google.com/file/d/1d9BSwA8cuV0rA3f_mMEXNYCF9Bf4tK3O/view?usp=sharing');
+            border-radius: 100%;            
             background-size: cover;
             background-position: center;
             margin-right: 120px;

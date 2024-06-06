@@ -19,9 +19,9 @@ function Navbar() {
               <Link to="/">JD PORT</Link>                          
             </div>
             <ul>
-              <li><Link to="/port">Portfolio</Link></li>
-              <li><a href="#portfolio">Skill</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Profile</Link></li>
+              <li><Link to="/page_port">Portfolio</Link></li>
+              <li><a href="#contact">Experience</a></li>
             </ul>
             <div className={styles.button}>
               <a href="#">Hire Me</a>

@@ -4,7 +4,7 @@
 
 .section {
   display: flex;
-  flex-direction: column; /* Change to column for better stacking on smaller screens */
+  flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
 }
@@ -14,7 +14,21 @@
   font-size: 16px;
   cursor: pointer;
   margin-right: 20px;
-  margin-bottom: 10px; /* Add margin bottom for spacing */
+  margin-bottom: 10px;
+}
+
+.toggleAllButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.innerButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .infoWindow {
@@ -22,7 +36,7 @@
   background-color: #0085ff;
   border-radius: 10px;
   padding: 20px;
-  max-width: 100%; /* Change to 100% for responsiveness */
+  max-width: 100%;
   color: #fff;
   box-sizing: border-box;
 }
@@ -35,15 +49,17 @@
   object-fit: cover;
   margin-bottom: 20px;
   border-radius: 10px;
+  border: 5px solid red;
 }
 
 .image {
-  width: 100%; /* Adjust to 100% for responsiveness */
-  max-width: 400px; /* Add max-width */
-  height: auto; /* Change to auto for maintaining aspect ratio */
-  border-radius: 20px;
-  margin: 20px 10px;
-  border: 2px solid #fff;
+  width: 100%; 
+  height: auto; 
+  max-width: 400px; 
+  max-height: 300px; 
+  border-radius: 20px; 
+  margin: 20px 10px; 
+  border: 2px solid #fff; 
 }
 
 .fileLink,
@@ -60,8 +76,8 @@
 }
 
 button {
-  width: 100px;
-  height: 50px;
+  width: 180px; 
+  height: 50px; 
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -69,6 +85,7 @@ button {
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 button:hover {
@@ -120,7 +137,30 @@ button:hover {
     font-size: 14px;
   }
 
-  .infoWindow ul {
+  .toggleAllButton {
+    width: 100%;
+    padding: 10px;
     font-size: 16px;
   }
+
+  .innerButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .infoWindow {
+    padding: 10px;
+  }
+
+  .image {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .infoWindow ul {
+    font-size: 16px;
+    margin: 0 5px;
+  }
+  
 }

@@ -1,8 +1,3 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AnimatedCursor from 'react-animated-cursor';
 import Navbar from './components/Navbar/Navbar';
@@ -14,10 +9,11 @@ import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Listport from './components/Listport/Listport';
+import Pageport from './components/Pageport/Pageport';
+import Blogdetail from './components/Blogdetail/Blogdetail';
+import Blogproject from './components/Blogproject/Blogproject';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <Router>
       <AnimatedCursor
@@ -26,9 +22,7 @@ function App() {
         color='0, 65, 125'
         outerAlpha={0.2}
         innerScale={1.5}
-        outerStyle={{
-          border: '3px solid #fff',
-        }}
+        outerStyle={{ border: '3px solid #fff' }}
         outerScale={5}
         clickables={[
           'a',
@@ -46,16 +40,21 @@ function App() {
       />
       <Navbar />
       <Routes>
-        <Route path="/" element={<>
-          <Hero />
-          <Skills />
-          <Portfolio />
-          <Number />
-          <Testimonials />
-          <Contact />
-          <Footer />
-        </>} />
+        <Route path="/" element={
+          <>
+            <Hero />
+            <Skills />
+            <Portfolio />
+            <Number />
+            <Testimonials />
+            <Contact />
+            <Footer />
+          </>
+        } />
         <Route path="/port" element={<Listport />} />
+        <Route path="/page_port" element={<Pageport />} />
+        <Route path="/page_port/:blogId" element={<Blogdetail />} />
+        <Route path="/page_port/project/:projectId" element={<Blogproject />} />
       </Routes>
     </Router>
   );
