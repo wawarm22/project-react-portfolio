@@ -89,6 +89,9 @@ function Blogproject() {
           <img key={index} src={img} alt={`Project image ${index + 1}`} />
         ))}
       </div>
+      <div className={style.button_container}>        
+        <button>view source code</button>
+      </div>
     </div>
   );
 }
