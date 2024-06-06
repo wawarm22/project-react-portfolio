@@ -14,7 +14,7 @@ const projectData = {
       "library : React",
       "build tool: Vite",      
     ],
-    content_cap: [], // Empty content_cap array
+    content_cap: [],
     image: imgProject.image1,
     images: [imgProject.image3, imgProject.image4, imgProject.image5, imgProject.image6], 
   },
@@ -71,8 +71,7 @@ function Blogproject() {
             <li key={index}>{item}</li>
           ))}
         </ul>
-      </div>
-      {/* Conditionally render content_cap */}
+      </div>      
       {projectId !== "project1" && (
         <div className={style.content_cap}>
           <h2>ความสามารถของโปรเจค</h2>

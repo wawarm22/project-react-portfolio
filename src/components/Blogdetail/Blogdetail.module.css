@@ -60,3 +60,24 @@
     background-color: #0056b3; 
   }
   
+  @media (max-width: 768px) {
+    .blog_container {
+      padding: 10px;
+    }
+  
+    .button_container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .button_container button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .blog_container ol {
+      text-align: center;
+    }
+  }

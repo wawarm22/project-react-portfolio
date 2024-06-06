@@ -82,3 +82,39 @@
   background-color: #0056b3; 
 }
 
+@media (max-width: 768px) {
+  .head_container img {
+    max-width: 100%;
+  }
+
+  .img_container {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .button_container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button_container button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project_container {
+    padding: 10px;
+  }
+
+  .content_language ul,
+  .content_tool ul,
+  .content_cap ul {
+    text-align: center;
+  }
+
+  .img_container img {
+    max-width: 100%;
+  }
+}

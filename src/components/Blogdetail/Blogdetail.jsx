@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import IMAGES from "../../images/images"; // Update the path as necessary
+import IMAGES from "../../images/images"; 
 import style from "./Blogdetail.module.css";
-import imgBlog from "../../img_blog/imgBlog"; // Ensure the path is correct
+import imgBlog from "../../img_blog/imgBlog"; 
 
 const blogData = {
   cer1: {
