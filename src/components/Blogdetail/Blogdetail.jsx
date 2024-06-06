@@ -98,8 +98,8 @@ function Blogdetail() {
 
   const handleCertificateClick = () => {
     if (blog.file && blog.file.length > 0) {
-      const certificateUrl = blog.file[0]; // Assuming there's only one certificate file
-      window.open(certificateUrl, '_blank'); // Open the certificate in a new tab
+      const certificateUrl = blog.file[0];
+      window.open(certificateUrl, '_blank'); 
     }
   };
 
