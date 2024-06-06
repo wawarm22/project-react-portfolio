@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import IMAGES from "../../images/images"; 
 import style from "./Blogdetail.module.css";
 import imgBlog from "../../img_blog/imgBlog"; 
+import Certificate from "../../certificate/certificate";
 
 const blogData = {
   cer1: {
@@ -17,6 +18,7 @@ const blogData = {
     ],
     image: IMAGES.image1,
     image2: [imgBlog.image1, imgBlog.image2, imgBlog.image3],
+    file: [Certificate.cer1],
   },
   cer2: {
     title: "ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS",
@@ -29,6 +31,7 @@ const blogData = {
     ],
     image: IMAGES.image2,
     image2: [imgBlog.image4],
+    file: [Certificate.cer2],
   },
   cer3: {
     title: "ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS",
@@ -43,6 +46,7 @@ const blogData = {
     ],
     image: IMAGES.image2,
     image2: [imgBlog.image5],
+    file: [Certificate.cer3],
   },
   cer4: {
     title: "เชื่อมต่อเว็บไซต์กับข้อมูลจากแหล่งอื่นๆ โดยใช้ API",
@@ -54,6 +58,7 @@ const blogData = {
     ],
     image: IMAGES.image2,
     image2: [imgBlog.image6],
+    file: [Certificate.cer4],
   },
   cer5: {
     title: "React ตั้งแต่พื้นฐาน จนสร้าง Chat Application ได้",
@@ -67,6 +72,7 @@ const blogData = {
     ],
     image: IMAGES.image2,
     image2: [imgBlog.image7, imgBlog.image8, imgBlog.image9],
+    file: [Certificate.cer5],
   },
   cer6: {
     title: "พัฒนาเว็บ React Portfolio ตั้งแต่เริ่มต้นจนขึ้น Deploy",
@@ -78,6 +84,7 @@ const blogData = {
     ],
     image: IMAGES.image2,
     image2: [imgBlog.image10, imgBlog.image11, imgBlog.image12],
+    file: [Certificate.cer6],
   },
 };
 
@@ -88,6 +95,13 @@ function Blogdetail() {
   if (!blog) {
     return <div>Blog not found</div>;
   }
+
+  const handleCertificateClick = () => {
+    if (blog.file && blog.file.length > 0) {
+      const certificateUrl = blog.file[0]; // Assuming there's only one certificate file
+      window.open(certificateUrl, '_blank'); // Open the certificate in a new tab
+    }
+  };
 
   return (
     <div className={style.blog_container}>
@@ -110,7 +124,7 @@ function Blogdetail() {
         ))}
       </div>
       <div className={style.button_container}>
-        <button>view certificate</button>
+        <button className={style.button_cer} onClick={handleCertificateClick}>view certificate</button>
         <button>view source code</button>
       </div>
     </div>
