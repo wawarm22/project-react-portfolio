@@ -16,11 +16,12 @@
     }
 }
 
-.head_container img {
+.head_container img, .img_container img {
   width: 600px;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+  border: 2px solid #333;
 }
 
 .content_language,
@@ -63,6 +64,7 @@
   border-radius: 8px;
   object-fit: cover;
   margin: 20px 0;
+  border: 2px solid #333;
 }
 
 .button_container {
