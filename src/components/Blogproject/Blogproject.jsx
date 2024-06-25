@@ -44,6 +44,17 @@ const projectData = {
   },
 };
 
+const ListSection = ({ title, items }) => (
+  <div className={style.list_section}>
+    <h2>{title}</h2>
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+
 function Blogproject() {
   const { projectId } = useParams();
   const project = projectData[projectId];
@@ -65,31 +76,10 @@ function Blogproject() {
         <h1>{project.title}</h1>
         <img src={project.image} alt="Project main" />
       </div>
-      <div className={style.content_language}>
-        <h2>ภาษาโปรแกรมที่ใช้เขียน</h2>
-        <ul>
-          {project.content_language.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
-      <div className={style.content_tool}>
-        <h2>เครื่องมือที่ใช้</h2>
-        <ul>
-          {project.content_tool.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
+      <ListSection title="ภาษาโปรแกรมที่ใช้เขียน" items={project.content_language} />
+      <ListSection title="เครื่องมือที่ใช้" items={project.content_tool} />
       {projectId !== "project1" && (
-        <div className={style.content_cap}>
-          <h2>ความสามารถของโปรเจค</h2>
-          <ul>
-            {project.content_cap.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        <ListSection title="ความสามารถของโปรเจค" items={project.content_cap} />
       )}
       <h2>ภาพจากโปรเจค</h2>
       <div className={style.img_container}>

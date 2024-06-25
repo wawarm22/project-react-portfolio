@@ -4,6 +4,73 @@ import style from './Pageport.module.css';
 import IMAGES from '../../images/images';
 import imgProject from '../../img_project/imgProject';
 
+const Blog = ({ onClick, imgSrc, title, description }) => (
+  <div className={style.blog} onClick={onClick}>
+    <img src={imgSrc} alt={title} />
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+);
+
+const CertificateSection = ({ handleBlogClick }) => (
+  <div className={style.blog_cer}>
+    {[
+      { id: 'cer1', img: IMAGES.image1, title: 'เริ่มต้นสร้างและแสดงเนื้อหาของเว็บไซต์ด้วย HTML', description: 'HTML' },
+      { id: 'cer2', img: IMAGES.image2, title: 'ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS', description: 'CSS' },
+      { id: 'cer3', img: IMAGES.image3, title: 'เพิ่มลูกเล่นให้กับเว็บไซต์ด้วย JavaScript', description: 'JavaScript' },
+      { id: 'cer4', img: IMAGES.image4, title: 'เชื่อมต่อเว็บไซต์กับข้อมูลจากแหล่งอื่นๆ โดยใช้ API', description: 'HTML + CSS + JavaScript' },
+      { id: 'cer5', img: IMAGES.image5, title: 'React ตั้งแต่พื้นฐาน จนสร้าง Chat Application ได้', description: 'React' },
+      { id: 'cer6', img: IMAGES.image6, title: 'พัฒนาเว็บ React Portfolio ตั้งแต่เริ่มต้นจนขึ้น Deploy', description: 'React Vite Framework' },
+    ].map((cert) => (
+      <Blog
+        key={cert.id}
+        onClick={() => handleBlogClick(cert.id)}
+        imgSrc={cert.img}
+        title={cert.title}
+        description={cert.description}
+      />
+    ))}
+  </div>
+);
+
+const ProjectSection = ({ handleProjectClick }) => (
+  <div className={style.blog_project}>
+    {[
+      { id: 'project1', img: imgProject.image1, title: 'Project React Vite Framework', description: 'โปรเจคที่ทำต่อยอดมาจากโปรเจคในคอร์ส react portfolio' },
+      { id: 'project2', img: imgProject.image2, title: 'Project Python Django', description: 'โปรเจคจบที่ทำตอนเรียนมหาวิทยาลัย' },
+    ].map((project) => (
+      <Blog
+        key={project.id}
+        onClick={() => handleProjectClick(project.id)}
+        imgSrc={project.img}
+        title={project.title}
+        description={project.description}
+      />
+    ))}
+  </div>
+);
+
+const DesignSection = () => (
+  <div className={style.blog_design}>
+    {[
+      { href: 'https://www.behance.net/gallery/170892121/App-Stay-Fit', img: IMAGES.image12, title: 'ออกแบบ UI Mobile Application', description: 'Figma + Canva' },
+      { href: 'https://www.behance.net/gallery/172491025/re-design-mobile-app', img: IMAGES.image15, title: 'Re-Design App Food Delivery', description: 'Figma' },
+      { href: 'https://www.behance.net/gallery/170891367/App-Food-Delivery', img: IMAGES.image19, title: 'ออกแบบ UI App Food Delivery', description: 'Canva' },
+      { href: 'https://www.behance.net/gallery/170727963/MY-LOGO-DESIGN', img: IMAGES.image20, title: 'ออกแบบ Logo ร้าน Bakery', description: 'Canva + Photoshop' },
+      { href: 'https://www.behance.net/gallery/170727963/MY-LOGO-DESIGN', img: IMAGES.image21, title: 'ออกแบบ Logo Mobile App', description: 'Canva' },
+      { href: 'https://www.behance.net/gallery/170727963/MY-LOGO-DESIGN', img: IMAGES.image22, title: 'ออกแบบ Logo เพจ Facebook', description: 'Canva + Photoshop' },
+    ].map((design) => (
+      <div key={design.title} className={style.blog}>
+        <a href={design.href} target="_blank" rel="noopener noreferrer">
+          <img src={design.img} alt={design.title} />
+          <h3>{design.title}</h3>
+          <p>{design.description}</p>
+        </a>
+      </div>
+    ))}
+  </div>
+);
+
 function Pageport() {
   const [activeSection, setActiveSection] = useState('certificate');
   const navigate = useNavigate();
@@ -20,6 +87,12 @@ function Pageport() {
     navigate(`/page_port/project/${projectId}`);
   };
 
+  const sections = {
+    certificate: <CertificateSection handleBlogClick={handleBlogClick} />,
+    project: <ProjectSection handleProjectClick={handleProjectClick} />,
+    design: <DesignSection />,
+  };
+
   return (
     <div className={style.main_container}>
       <div className={style.topic_con}>
@@ -27,104 +100,29 @@ function Pageport() {
         <p>นี่คือผลงานทั้งหมดที่เคยทำมามีทั้ง การเรียน โปรเจค และงานออกแบบ</p>
       </div>
       <div className={style.menu_con}>
-        <button id={style.button_cer} onClick={() => handleButtonClick('certificate')}>Certificate</button>
-        <button id={style.button_project} onClick={() => handleButtonClick('project')}>Project</button>
-        <button id={style.button_design} onClick={() => handleButtonClick('design')}>Design</button>
+        <button
+          id={style.button_cer}
+          className={activeSection === 'certificate' ? style.active : ''}
+          onClick={() => handleButtonClick('certificate')}
+        >
+          Certificate
+        </button>
+        <button
+          id={style.button_project}
+          className={activeSection === 'project' ? style.active : ''}
+          onClick={() => handleButtonClick('project')}
+        >
+          Project
+        </button>
+        <button
+          id={style.button_design}
+          className={activeSection === 'design' ? style.active : ''}
+          onClick={() => handleButtonClick('design')}
+        >
+          Design
+        </button>
       </div>
-      {activeSection === 'certificate' && (
-        <div className={style.blog_cer}>
-          <div className={style.blog} onClick={() => handleBlogClick('cer1')}>
-            <img src={IMAGES.image1} alt="" />
-            <h3>เริ่มต้นสร้างและแสดงเนื้อหาของเว็บไซต์ด้วย HTML</h3>
-            <p>HTML</p>
-          </div>
-          <div className={style.blog} onClick={() => handleBlogClick('cer2')}>
-            <img src={IMAGES.image2} alt="" />
-            <h3>ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS</h3>
-            <p>CSS</p>
-          </div>
-          <div className={style.blog} onClick={() => handleBlogClick('cer3')}>
-            <img src={IMAGES.image3} alt="" />
-            <h3>เพิ่มลูกเล่นให้กับเว็บไซต์ด้วย JavaScript</h3>
-            <p>JavaScript</p>
-          </div>
-          <div className={style.blog} onClick={() => handleBlogClick('cer4')}>
-            <img src={IMAGES.image4} alt="" />
-            <h3>เชื่อมต่อเว็บไซต์กับข้อมูลจากแหล่งอื่นๆ โดยใช้ API</h3>
-            <p>HTML + CSS + JavaScript</p>
-          </div>
-          <div className={style.blog} onClick={() => handleBlogClick('cer5')}>
-            <img src={IMAGES.image5} alt="" />
-            <h3>React ตั้งแต่พื้นฐาน จนสร้าง Chat Application ได้</h3>
-            <p>React</p>
-          </div>
-          <div className={style.blog} onClick={() => handleBlogClick('cer6')}>
-            <img src={IMAGES.image6} alt="" />
-            <h3>พัฒนาเว็บ React Portfolio ตั้งแต่เริ่มต้นจนขึ้น Deploy</h3>
-            <p>React Vite Framwork</p>
-          </div>
-        </div>
-      )}
-      {activeSection === 'project' && (
-        <div className={style.blog_project}>
-          <div className={style.blog} onClick={() => handleProjectClick('project1')}>
-            <img src={imgProject.image1} alt="project react" />
-            <h3>Project React Vite Framework</h3>
-            <p>โปรเจคที่ทำต่อยอดมาจากโปรเจคในคอร์ส react portfolio</p>
-          </div>
-          <div className={style.blog} onClick={() => handleProjectClick('project2')}>
-            <img src={imgProject.image2} alt="project python" />
-            <h3>Project Python Django</h3>
-            <p>โปรเจคจบที่ทำตอนเรียนมหาวิทยาลัย</p>
-          </div>                   
-        </div>
-      )}
-      {activeSection === 'design' && (
-        <div className={style.blog_design}>
-          <div className={style.blog}>
-            <a href="https://www.behance.net/gallery/170892121/App-Stay-Fit" target="_blank" rel="noopener noreferrer">
-                <img src={IMAGES.image12} alt="" />
-                <h3>ออกแบบ UI Mobile Appication</h3>
-                <p>Figma + Canva</p>
-            </a>
-          </div>
-          <div className={style.blog}>
-            <a href="https://www.behance.net/gallery/172491025/re-design-mobile-app" target="_blank" rel="noopener noreferrer">
-                <img src={IMAGES.image15} alt="" />
-                <h3>Re-Design App Food Delivery</h3>
-                <p>Figma</p>
-            </a>            
-          </div>
-          <div className={style.blog}>
-            <a href="https://www.behance.net/gallery/170891367/App-Food-Delivery" target="_blank" rel="noopener noreferrer">
-                <img src={IMAGES.image19} alt="" />
-                <h3>ออกแบบ UI App Food Delivery</h3>
-                <p>Canva</p>
-            </a>            
-          </div>
-          <div className={style.blog}>
-            <a href="https://www.behance.net/gallery/170727963/MY-LOGO-DESIGN" target="_blank" rel="noopener noreferrer">
-                <img src={IMAGES.image20} alt="" />
-                <h3>ออกแบบ Logo ร้าน BaKery</h3>
-                <p>Canva + Photoshop</p>
-            </a>            
-          </div>
-          <div className={style.blog}>
-            <a href="https://www.behance.net/gallery/170727963/MY-LOGO-DESIGN" target="_blank" rel="noopener noreferrer">
-                <img src={IMAGES.image21} alt="" />
-                <h3>ออกแบบ Logo Mobile App</h3>
-                <p>Canva</p>
-            </a>            
-          </div>
-          <div className={style.blog}>
-            <a href="https://www.behance.net/gallery/170727963/MY-LOGO-DESIGN" target="_blank" rel="noopener noreferrer">
-                <img src={IMAGES.image22} alt="" />
-                <h3>ออกแบบ Logo เพจ Facebook</h3>
-                <p>Canva + Photoshop</p>
-            </a>            
-          </div>
-        </div>
-      )}
+      {sections[activeSection]}
     </div>
   );
 }

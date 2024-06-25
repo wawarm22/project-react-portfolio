@@ -88,6 +88,17 @@ const blogData = {
   },
 };
 
+const ListSection = ({ title, items }) => (
+  <div className={style.list_section}>
+    <h2>{title}</h2>
+    <ol>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ol>
+  </div>
+);
+
 function Blogdetail() {
   const { blogId } = useParams();
   const blog = blogData[blogId];
@@ -107,16 +118,7 @@ function Blogdetail() {
     <div className={style.blog_container}>
       <h1>{blog.title}</h1>
       <img src={blog.image} alt="img from course in future skill" />
-      <h2>บทเรียนในคอร์ส</h2>
-      {Array.isArray(blog.content) ? (
-        <ol>
-          {blog.content.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ol>
-      ) : (
-        <p>{blog.content}</p>
-      )}
+      <ListSection title="บทเรียนในคอร์ส" items={blog.content} />
       <h2>ภาพจากโปรเจคที่ทำในคอร์สเรียน</h2>
       <div className={style.img2_container}>
         {blog.image2.map((img, index) => (
